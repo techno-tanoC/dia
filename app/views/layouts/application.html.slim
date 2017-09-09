@@ -1,9 +1,30 @@
-html
+doctype html
+html lang="en"
   head
-    title
-      | dia
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="" name="description"
+    meta content="" name="author"
+    title Dia
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css"
+    link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+    script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    = yield
+    .container role="main"
+      nav.nav-extended
+        .nav-wrapper
+          .brand-logo.center.flow-text Dia
+        .nav-content
+          = link_to new_item_path, class: "btn-floating btn-large halfway-fab waves-effect waves-light teal"
+            i.material-icons add
+      .contents
+        = yield
+      footer.page-footer
+        .footer-copyright
+          .container © 2017 Copyright Dia

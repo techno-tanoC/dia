@@ -1,0 +1,18 @@
+@import "materialize/components/color";
+$primary-color: color("red", "darken-1") !default;
+@import 'materialize';
+@import "./item";
+
+body {
+  margin: 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+
+  .contents {
+    margin: 30px auto;
+    max-width: 800px;
+  }
+}

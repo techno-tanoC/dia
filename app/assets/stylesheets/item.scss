@@ -1,0 +1,37 @@
+.item-list {
+}
+
+.overlay {
+  position: relative;
+
+  .overlay-link {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+  }
+}
+
+.paper {
+  box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 20px;
+
+  .title {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  .button {
+    margin-right: 10px;
+    z-index: 10;
+  }
+}
