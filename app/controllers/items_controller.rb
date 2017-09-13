@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.includes(:tags).all
+    @items = Item.includes(:tags).reverse_order.all
   end
 
   # GET /items/1
