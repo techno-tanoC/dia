@@ -21,13 +21,20 @@
 .item {
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 80px;
   margin-bottom: 20px;
 
-  .title {
+  .info {
     width: 100%;
     padding: 10px;
-    font-size: 1.3rem;
+
+    .title {
+      font-size: 1.5rem;
+    }
+
+    .tags {
+      font-size: 1.0rem;
+    }
   }
 
   .button {
