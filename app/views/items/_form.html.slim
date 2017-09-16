@@ -8,11 +8,11 @@
 
   .input-field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, autocomplete: :off
   .input-field
     = f.label :url
-    = f.text_field :url
+    = f.text_field :url, autocomplete: :off
   .input-field
     = f.label :tag_list
-    = f.text_field :tag_list
+    = f.text_field :tag_list, autocomplete: :off
   .actions = f.submit
