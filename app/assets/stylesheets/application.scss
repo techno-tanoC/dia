@@ -2,6 +2,8 @@
 $primary-color: color("red", "darken-1") !default;
 @import 'materialize';
 @import "./item";
+@import "./overlay";
+@import "./paper";
 
 body {
   margin: 0;
