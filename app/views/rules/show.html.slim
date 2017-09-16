@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Target:
+  = @rule.target
+p
+  strong Regex:
+  = @rule.regex
+p
+  strong Tag:
+  = @rule.tag
+
+= link_to 'Edit', edit_rule_path(@rule)
+'  |
+= link_to 'Back', rules_path
