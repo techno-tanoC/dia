@@ -19,7 +19,7 @@ html lang="en"
     .container role="main"
       nav.nav-extended
         .nav-wrapper
-          .brand-logo.center.flow-text Dia
+          = link_to 'Dia', root_path, class: "brand-logo center flow-text"
         .nav-content
           = link_to new_item_path, class: "btn-floating btn-large halfway-fab waves-effect waves-light teal"
             i.material-icons add
