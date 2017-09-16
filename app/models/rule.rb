@@ -1,4 +1,7 @@
 class Rule < ApplicationRecord
+  validates :regex, :tag, presence: true
+  validates :target, inclusion: { in: %w(title url), message: "target is 'title' or 'url'" }
+
   def apply(item)
     if match?(item)
       item.tag_list.add(self.tag)
