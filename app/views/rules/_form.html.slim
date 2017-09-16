@@ -6,13 +6,13 @@
         - @rule.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .input-field
     = f.label :target
     = f.text_field :target
-  .field
+  .input-field
     = f.label :regex
     = f.text_field :regex
-  .field
+  .input-field
     = f.label :tag
     = f.text_field :tag
   .actions = f.submit
