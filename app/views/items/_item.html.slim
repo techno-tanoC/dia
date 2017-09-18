@@ -2,8 +2,8 @@
   a.overlay-link target="_blank" href=item.url
   .paper.item
     .info.truncate
-      .title.flow-text= item.title
-      .tags.flow-text= item.tags.map(&:name).join(' ')
+      .title.flow-text.truncate= item.title
+      .tags.flow-text.truncate= item.tags.map(&:name).join(' ')
     .button
       = link_to edit_item_path(item), class: "btn-floating orange waves-effect waves-light"
         i.material-icons edit
