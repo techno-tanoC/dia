@@ -12,15 +12,45 @@ html lang="en"
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    .container role="main"
-      nav.nav-extended
+    .navbar-fixed
+      nav
         .nav-wrapper
-          = link_to 'Dia', root_path, class: "brand-logo center flow-text"
-        .nav-content
-          = link_to new_item_path, class: "btn-floating btn-large halfway-fab waves-effect waves-light teal"
+          = form_tag search_path, method: :get do
+            .input-field
+              = search_field_tag :search, nil, autocomplete: :off
+              = label_tag :search, style: "margin-top: -12px;", class: "label-icon" do
+                i.material-icons search
+              i#search-text-delete-button.material-icons close
+
+    .container role="main"
+      = yield
+
+    footer.page-footer
+      .footer-copyright
+        .container © 2017 Copyright Dia
+
+    .fixed-action-btn
+      a.btn-floating.btn-large
+        i.material-icons menu
+      ul
+        li
+          = link_to rules_path, class: "btn-floating blue"
+            i.material-icons build
+        li
+          = link_to new_item_path, class: "btn-floating red"
             i.material-icons add
-      .contents
-        = yield
-      footer.page-footer
-        .footer-copyright
-          .container © 2017 Copyright Dia
+        li
+          = link_to root_path, class: "btn-floating green"
+            i.material-icons home
+      /= link_to new_item_path, class: "btn-floating btn-large waves-effect waves-light teal"
+        i.material-icons add
+
+    javascript:
+      $('#search-text-delete-button').click(function() {
+        var searchInput = $('#search')
+        searchInput.focus();
+        searchInput.val('');
+      });
+      //$('.click-to-toggle').click(function() {
+      //  $(this).toggleClass("active");
+      //});

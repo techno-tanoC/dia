@@ -15,3 +15,12 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+// $.ready(function() {
+//   shortcut.add(
+//     'a', function() {
+//       console.log('a');
+//     }, {
+//       disable_in_input: true
+//     });
+// });
