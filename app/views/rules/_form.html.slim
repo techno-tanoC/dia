@@ -1,4 +1,4 @@
-= form_for @rule do |f|
+= form_for @rule, html: {autocomplete: :off} do |f|
   - if @rule.errors.any?
     #error_explanation
       = "#{pluralize(@rule.errors.count, "error")} prohibited this rule from being saved:"
@@ -8,11 +8,11 @@
 
   .input-field
     = f.label :target
-    = f.text_field :target, autocomplete: :off
+    = f.text_field :target
   .input-field
     = f.label :regex
-    = f.text_field :regex, autocomplete: :off
+    = f.text_field :regex
   .input-field
     = f.label :tag
-    = f.text_field :tag, autocomplete: :off
+    = f.text_field :tag
   .actions = f.submit

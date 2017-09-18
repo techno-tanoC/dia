@@ -1,4 +1,4 @@
-= form_for @item do |f|
+= form_for @item, html: {autocomplete: :off} do |f|
   - if @item.errors.any?
     #error_explanation
       = "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
@@ -8,11 +8,11 @@
 
   .input-field
     = f.label :title
-    = f.text_field :title, autocomplete: :off
+    = f.text_field :title
   .input-field
     = f.label :url
-    = f.text_field :url, autocomplete: :off
+    = f.text_field :url
   .input-field
     = f.label :tag_list
-    = f.text_field :tag_list, autocomplete: :off
+    = f.text_field :tag_list
   .actions = f.submit
