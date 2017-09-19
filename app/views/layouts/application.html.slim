@@ -19,7 +19,9 @@ html lang="en"
             .input-field
               = search_field_tag :search, nil, autocomplete: :off
               = label_tag :search, style: "margin-top: -12px;", class: "label-icon" do
-                i.material-icons search
+                = link_to root_path do
+                  i.material-icons search
+              = link_to "", root_path, class: "menu-link"
               i#search-text-delete-button.material-icons close
 
     .container role="main"
@@ -42,8 +44,6 @@ html lang="en"
         li
           = link_to root_path, class: "btn-floating green"
             i.material-icons home
-      /= link_to new_item_path, class: "btn-floating btn-large waves-effect waves-light teal"
-        i.material-icons add
 
     javascript:
       $('#search-text-delete-button').click(function() {
@@ -51,6 +51,3 @@ html lang="en"
         searchInput.focus();
         searchInput.val('');
       });
-      //$('.click-to-toggle').click(function() {
-      //  $(this).toggleClass("active");
-      //});
