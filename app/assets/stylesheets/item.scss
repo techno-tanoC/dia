@@ -16,7 +16,14 @@
     }
 
     .tags {
-      font-size: 1.0rem;
+      line-height: 20px;
+    }
+
+    .tag {
+      position: relative;
+      z-index: 20;
+      margin-right: 5px;
+      font-size: 1.1rem;
     }
   }
 

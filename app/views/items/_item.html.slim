@@ -3,7 +3,9 @@
   .paper.item
     .info.truncate
       .title.flow-text.truncate= item.title
-      .tags.flow-text.truncate= item.tags.map(&:name).join(' ')
+      .tags.flow-text.truncate
+        - item.tags.each do |tag|
+          = link_to tag, search_path(search: "tag:#{tag}"), class: "tag"
     .button
       = link_to edit_item_path(item), class: "btn-floating orange waves-effect waves-light"
         i.material-icons edit
