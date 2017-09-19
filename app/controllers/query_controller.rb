@@ -8,16 +8,16 @@ class QueryController < ApplicationController
 
   def search
     @items = Item.eager_load(:tags).reverse_order
-    search_params.each do |type, str|
+    @items = search_params.inject(@items) do |items, (type, str)|
       case type
       when :tag
-        @items = @items.where("lower(tags.name) LIKE ?", "%#{str.downcase}%")
+        items.where("lower(tags.name) LIKE ?", "%#{str.downcase}%")
       when :title
-        @items = @items.where("lower(title) LIKE ?", "%#{str.downcase}%")
+        items.where("lower(title) LIKE ?", "%#{str.downcase}%")
       when :url
-        @items = @items.where("lower(url) LIKE ?", "%#{str.downcase}%")
+        items.where("lower(url) LIKE ?", "%#{str.downcase}%")
       else
-        @items
+        items
       end
     end
   end
