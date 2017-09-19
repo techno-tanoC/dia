@@ -7,7 +7,7 @@ class QueryController < ApplicationController
   end
 
   def search
-    @items = Item.eager_load(:tags)
+    @items = Item.eager_load(:tags).reverse_order
     search_params.each do |type, str|
       case type
       when :tag
