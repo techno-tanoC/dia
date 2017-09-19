@@ -10,6 +10,12 @@ body {
   width: 100%;
 }
 
+.wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 10px;
+}
+
 .menu-link {
   position: absolute;
   top: 0;
@@ -17,4 +23,8 @@ body {
   width: 56px;
   height: 64px;
   z-index: 100;
+}
+
+.menu {
+  font-size: 2rem;
 }

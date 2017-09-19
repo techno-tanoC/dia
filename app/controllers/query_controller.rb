@@ -1,4 +1,7 @@
 class QueryController < ApplicationController
+  def menu
+  end
+
   def tags
     @tags = ActsAsTaggableOn::Tag.all
   end

@@ -19,19 +19,18 @@ html lang="en"
             .input-field
               = search_field_tag :search, nil, autocomplete: :off
               = label_tag :search, style: "margin-top: -12px;", class: "label-icon" do
-                = link_to root_path do
-                  i.material-icons search
-              = link_to "", root_path, class: "menu-link"
+                i.material-icons search
+              = link_to "", menu_path, class: "menu-link"
               i#search-text-delete-button.material-icons close
 
-    .container role="main"
+    .wrapper role="main"
       = yield
 
     footer.page-footer
       .footer-copyright
         .container © 2017 Copyright Dia
 
-    .fixed-action-btn
+    /.fixed-action-btn
       a.btn-floating.btn-large
         i.material-icons menu
       ul
