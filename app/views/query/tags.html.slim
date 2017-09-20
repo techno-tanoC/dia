@@ -1,0 +1,3 @@
+.collection-link.collection
+  - @tags.each do |tag|
+    = link_to tag.name, search_path(search: "tag:#{tag.name}"), class: "collection-item flow-text"
