@@ -25,7 +25,14 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-    Rule.all.each {|rule| rule.apply(@item) }
+    notices = []
+    Rule.all.each do |rule|
+      begin
+        rule.apply(@item)
+      rescue Timeout::Error
+        # notices << "rule(target: #{rule.target}, regex: #{rule.regex}, tag: #{rule.tag}) is timeouted"
+      end
+    end
 
     respond_to do |format|
       if @item.save
