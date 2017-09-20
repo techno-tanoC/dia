@@ -17,7 +17,7 @@ class QueryController < ApplicationController
       when :url
         items.url_cont(str)
       when :word
-        items.where("lower(title) LIKE ? OR lower(url) LIKE ?", "%#{str.downcase}%", "%#{str.downcase}%")
+        items.title_or_url_cont(str)
       else
         items
       end
