@@ -17,7 +17,7 @@ html lang="en"
         .nav-wrapper
           = form_tag search_path, method: :get do
             .input-field
-              = search_field_tag :search, nil, autocomplete: :off
+              = search_field_tag :search, nil, autocomplete: :off, placeholder: "Dia"
               = label_tag :search, style: "margin-top: -12px;", class: "label-icon" do
                 i.material-icons search
               = link_to "", menu_path, class: "menu-link"
