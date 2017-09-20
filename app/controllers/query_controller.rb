@@ -13,9 +13,9 @@ class QueryController < ApplicationController
       when :tag
         items.where("lower(tags.name) LIKE ?", "%#{str.downcase}%")
       when :title
-        items.where("lower(title) LIKE ?", "%#{str.downcase}%")
+        items.title_cont(str)
       when :url
-        items.where("lower(url) LIKE ?", "%#{str.downcase}%")
+        items.url_cont(str)
       else
         items
       end
