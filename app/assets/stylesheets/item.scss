@@ -4,8 +4,21 @@
 .item {
   display: flex;
   align-items: center;
-  height: 75px;
+  min-height: 75px;
   margin-bottom: 10px;
+
+  .info, .title, .tags {
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  @media (min-width: 768px) {
+    .info, .title, .tags {
+      white-space: nowrap;
+    }
+  }
 
   .info {
     width: 100%;
@@ -21,7 +34,7 @@
 
     .tag {
       position: relative;
-      z-index: 20;
+      z-index: 10;
       margin-right: 5px;
       font-size: 1.1rem;
     }

@@ -1,9 +1,9 @@
 .overlay
   a.overlay-link target="_blank" href=item.url
   .paper.item
-    .info.truncate
-      .title.flow-text.truncate= item.title
-      .tags.flow-text.truncate
+    .info
+      .title.flow-text= item.title
+      .tags.flow-text
         - item.tags.each do |tag|
           = link_to tag, search_path(search: "tag:#{tag}"), class: "tag"
     .button
