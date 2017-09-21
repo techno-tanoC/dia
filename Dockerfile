@@ -10,3 +10,8 @@ ADD Gemfile.lock .
 RUN bundle install
 
 ADD . .
+
+ENV RAILS_ENV production
+ENV RAILS_SERVE_STATIC_FILES true
+
+RUN bundle exec rails assets:precompile
