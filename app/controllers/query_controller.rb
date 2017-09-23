@@ -7,7 +7,7 @@ class QueryController < ApplicationController
   end
 
   def search
-    @items = Item.eager_load(:tags).reverse_order
+    @items = Item.joins(:tags).reverse_order
     @items = search_params.inject(@items) do |items, (type, str)|
       case type
       when :tag
@@ -22,6 +22,7 @@ class QueryController < ApplicationController
         items
       end
     end
+    @items = Item.where(id:  @items.pluck(:id)).eager_load(:tags)
   end
 
   private
