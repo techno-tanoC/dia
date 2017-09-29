@@ -23,6 +23,7 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'materialize-sass'
 gem 'acts-as-taggable-on'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

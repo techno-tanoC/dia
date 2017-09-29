@@ -8,6 +8,12 @@ Bundler.require(*Rails.groups)
 
 module Dia
   class Application < Rails::Application
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: %w(get post options)
+      end
+    end
     
     config.generators do |g|
       g.javascripts false
