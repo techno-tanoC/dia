@@ -1,4 +1,6 @@
 /sqlite
+extension.crx
+extension.pem
 
 # Created by https://www.gitignore.io/api/ruby,rails
 

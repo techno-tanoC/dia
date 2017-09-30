@@ -1,0 +1,11 @@
+{
+  "name": "Dia Extension",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Post to the Dia app.",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["tabs", "storage"],
+  "options_page": "options.html"
+}
